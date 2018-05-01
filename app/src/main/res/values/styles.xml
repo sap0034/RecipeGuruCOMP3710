@@ -1,20 +1,82 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorNavy</item>
-        <item name="colorPrimaryDark">@color/colorOrange</item>
-        <item name="colorAccent">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorNavy</item>
+        <item name="colorAccent">@color/colorNavy</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="Full" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="colorPrimary">@color/colorNavy</item>
+        <item name="colorPrimaryDark">@color/colorNavy</item>
+        <item name="colorAccent">@color/colorNavy</item>
+    </style>
+
+    <style name="Regular" parent="android:TextAppearance">
+    </style>
+
+    <style name="SemiBold" parent="android:TextAppearance">
+    </style>
+
+    <style name="Light" parent="android:TextAppearance">
+    </style>
+
+    <style name="MenuItem">
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/h3</item>
+    </style>
+
+    <style name="Text14Reg">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/Regular</item>
+    </style>
+
+    <style name="Text22Semi">
+        <item name="android:textSize">@dimen/h1</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/SemiBold</item>
+    </style>
+
+    <style name="Text22SemiWhite">
+        <item name="android:textSize">@dimen/h1</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Text14It">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/Light</item>
+    </style>
+
+    <style name="Text14ItGrey">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/Light</item>
+    </style>
+
+    <style name="Text14Grey">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/Regular</item>
+    </style>
+
+    <style name="Text14Pink">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textColor">@color/colorNavy</item>
+        <item name="android:textAppearance">@style/Regular</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 </resources>
+
+
+
+
+
