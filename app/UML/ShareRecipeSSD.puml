@@ -1,0 +1,9 @@
+@startuml
+User -> System: Request to share Recipe
+System --> User: Prompts for social media selection
+
+User -> System: Selects social media
+System -> System: Uploads Recipe
+System --> User: Returns share confirmation
+
+@enduml

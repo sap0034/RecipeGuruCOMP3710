@@ -1,0 +1,12 @@
+@startuml
+                     User -> System: 1: Request to EditRecipe()
+                     System -> System: 2: Finds recipe by ID
+                     System --> User: 3: Return Recipe Details
+group Recipe
+                     User -> System: 4: EditRecipe()
+                     User -> System: 5: SubmitRecipe()
+end
+                     System -> System: 6: Updates recipe
+                     System --> User: 7: Returns Recipe Update Confirmation
+
+                     @enduml

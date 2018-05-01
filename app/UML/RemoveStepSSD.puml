@@ -1,0 +1,8 @@
+@startuml
+User -> System: Request to Remove Step
+System -> User: Prompt to remove step
+User --> User: Chooses with step to remove
+User -> System: Submit()
+System -> System: Removes Step
+System --> User: Sends removal confirmation
+@enduml

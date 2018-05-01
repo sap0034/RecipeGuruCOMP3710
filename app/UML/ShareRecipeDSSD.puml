@@ -1,0 +1,12 @@
+@startuml
+User -> UserHomePage: Clicks button to share Recipe
+UserHomePage -> System: Sends share request
+System --> UserHomePage: Prompts for social media selection
+
+User -> UserHomePage: Selects social media
+UserHomePage -> System: Sends social media selection
+System -> System: Uploads Recipe
+System --> UserHomePage: Returns share confirmation
+User -> UserHomePage: Views confirmation
+
+@enduml

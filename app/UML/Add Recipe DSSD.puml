@@ -1,0 +1,11 @@
+@startuml
+       User -> UserHomePage: 1: Click button to add new Recipe
+       UserHomePage -> System: 2: Request New Recipe Form
+       System --> UserHomePage: 3: Return New Recipe Form
+       group New Recipe Form
+       User -> UserHomePage: 4: Fills out Recipe Information
+       User -> UserHomePage: 5: AddIngredients()
+       User -> UserHomePage: 6: AddSteps()
+       User -> UserHomePage: 7: Submit()
+        end
+       @enduml

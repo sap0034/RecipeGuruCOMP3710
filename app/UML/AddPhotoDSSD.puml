@@ -1,0 +1,11 @@
+@startuml
+User -> UserHomePage: Clicks button to add new Photo
+UserHomePage -> System: Requests Photo Access
+System --> UserHomePage: Prompts for adding Photo
+
+User -> UserHomePage: Selects Photo
+UserHomePage -> System: Sends Photo to System
+System --> UserHomePage: Sends Photo Addition Confirmation Request
+User -> UserHomePage: Confirms Photo
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+User -> System: Requests to add new photo
+System --> User: Prompts for adding Photo
+
+User -> User: Selects Photo
+User -> System: Sends Photo to System
+System --> User: Sends Photo Addition Confirmation Request
+@enduml
