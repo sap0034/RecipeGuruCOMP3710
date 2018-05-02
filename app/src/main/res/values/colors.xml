@@ -6,10 +6,10 @@
 
 <!--app theme colors -->
         <color name="colorNavy">#0a196e</color>
-        <color name="colorNavyTrans">#7d0a196e</color>
+        <color name="colorNavyTrans">#7d041059</color>
         <color name="colorOrange">#FFE6690F</color>
-        <color name="colorOrangeTrans">#98E6690F</color>
-        <color name="colorWhite">#FFFDFDFD</color>
+        <color name="colorOrangeTrans">#98e6690f</color>
+        <color name="colorWhite">#fdfdfd</color>
         <color name="colorWhiteTrans">#E6FFFFFF</color>
 
 
