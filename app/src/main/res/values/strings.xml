@@ -8,7 +8,10 @@
     <string name="group_members">Stephanie Parrish | Mason Monday</string>
     <string name="group_name">Auburn University</string>
     <string name="semester_class">COMP3710 Spring 2018</string>
-
+    <string name="new_recipe">NEW RECIPE</string>
+    <string name="recipes">RECIPES</string>
+    <string name="favorites">FAVORITES</string>
+    <string name="settings">SETTINGS</string>
 
     /login_page.xml
     <string name="forgot_password_button">Forgot Password?</string>
