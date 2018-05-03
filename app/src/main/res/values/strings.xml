@@ -25,4 +25,5 @@
     <string name="dinner_button">Dinner</string>
     <string name="desserts_button">Desserts</string>
     <string name="title_activity_splash">Splash</string>
+    <string name="main_activity_btn_click_here">Click Here!!</string>
 </resources>
