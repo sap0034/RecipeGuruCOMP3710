@@ -12,6 +12,7 @@
     <string name="recipes">RECIPES</string>
     <string name="favorites">FAVORITES</string>
     <string name="settings">SETTINGS</string>
+    <string name="share_recipe">Share your recipe with friends!</string>
 
     /login_page.xml
     <string name="forgot_password_button">Forgot Password?</string>
