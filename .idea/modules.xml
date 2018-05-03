@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RecipeGuru.iml" filepath="$PROJECT_DIR$/RecipeGuru.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RecipeGuruCOMP3710.iml" filepath="$PROJECT_DIR$/RecipeGuruCOMP3710.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -2,6 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/java/edu/auburn/eng/csse/comp3710/a2b2b/recipeguru" vcs="Git" />
   </component>
 </project>
