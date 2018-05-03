@@ -1,0 +1,22 @@
+@startuml
+       User -> UserHomePage: 1: Click button to add new Recipe
+       UserHomePage -> System: 2: Request New Recipe Form
+       System --> UserHomePage: 3: Return New Recipe Form
+group New Recipe Form
+       User -> UserHomePage: 4: Fills out Recipe Information
+       group Loop- Add Multiple Ingredients
+       User -> UserHomePage: 5: AddIngredient()
+       end
+       group Loop- Add Multiple Steps
+       User -> UserHomePage: 6: AddStep()
+       end
+       User -> UserHomePage: 7: SubmitForm()
+       end
+       UserHomePage -> System: 8: SubmitForm()
+
+       System -> System: 9: Adds Recipe to User Account
+       System --> UserHomePage: 10: Returns Recipe List on Home Page
+       System --> UserHomePage: 11: Returns Recipe Added Confirmation
+       User -> UserHomePage: 12: Views Confirmation on Home Page
+
+       @enduml

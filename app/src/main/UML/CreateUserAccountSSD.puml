@@ -1,0 +1,11 @@
+@startuml
+User -> System: 1: RequestNewAccount()
+System --> User: 2: Return New Account Form
+
+User -> User: 3: Fills Out Form
+User -> System: 4: Submits Form
+
+System -> System: 5: Creates New Account
+System --> User: 6: Return New Account Confirmation
+
+@enduml

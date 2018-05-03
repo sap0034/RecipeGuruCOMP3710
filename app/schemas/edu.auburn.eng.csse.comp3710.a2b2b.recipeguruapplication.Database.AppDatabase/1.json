@@ -1,0 +1,427 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "6795514ff2cee7ced7a19c372cefe11b",
+    "entities": [
+      {
+        "tableName": "Account",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AccountID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `FirstName` TEXT, `LastName` TEXT, `EmailAddress` TEXT, `Password` TEXT, `AccountCreatedDateTime` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "AccountID",
+            "columnName": "AccountID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "FirstName",
+            "columnName": "FirstName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "LastName",
+            "columnName": "LastName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "EmailAddress",
+            "columnName": "EmailAddress",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Password",
+            "columnName": "Password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "AccountCreatedDatetime",
+            "columnName": "AccountCreatedDateTime",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AccountID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Ingredient",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`IngredientID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `IngredientText` TEXT, `IngredientAmount` INTEGER NOT NULL, `RecipeID` INTEGER NOT NULL, `MeasurementID` INTEGER NOT NULL, FOREIGN KEY(`RecipeID`) REFERENCES `Recipe`(`RecipeID`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`MeasurementID`) REFERENCES `Measurement`(`MeasurementID`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "IngredientID",
+            "columnName": "IngredientID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "IngredientText",
+            "columnName": "IngredientText",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "IngredientAmount",
+            "columnName": "IngredientAmount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeID",
+            "columnName": "RecipeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "MeasurementID",
+            "columnName": "MeasurementID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "IngredientID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Ingredient_MeasurementID",
+            "unique": false,
+            "columnNames": [
+              "MeasurementID"
+            ],
+            "createSql": "CREATE  INDEX `index_Ingredient_MeasurementID` ON `${TABLE_NAME}` (`MeasurementID`)"
+          },
+          {
+            "name": "index_Ingredient_RecipeID",
+            "unique": false,
+            "columnNames": [
+              "RecipeID"
+            ],
+            "createSql": "CREATE  INDEX `index_Ingredient_RecipeID` ON `${TABLE_NAME}` (`RecipeID`)"
+          },
+          {
+            "name": "index_Ingredient_IngredientText",
+            "unique": false,
+            "columnNames": [
+              "IngredientText"
+            ],
+            "createSql": "CREATE  INDEX `index_Ingredient_IngredientText` ON `${TABLE_NAME}` (`IngredientText`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Recipe",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "RecipeID"
+            ],
+            "referencedColumns": [
+              "RecipeID"
+            ]
+          },
+          {
+            "table": "Measurement",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "MeasurementID"
+            ],
+            "referencedColumns": [
+              "MeasurementID"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Measurement",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`MeasurementID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `MeasurementName` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "MeasurementID",
+            "columnName": "MeasurementID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "MeasurementName",
+            "columnName": "MeasurementName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "MeasurementID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Recipe",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`RecipeID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `RecipeName` TEXT, `CookTime` TEXT, `PrepTime` TEXT, `TotalTime` TEXT, `Servings` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, `AccountID` INTEGER NOT NULL, `RecipeTypeID` INTEGER NOT NULL, FOREIGN KEY(`AccountID`) REFERENCES `Account`(`AccountID`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`RecipeTypeID`) REFERENCES `RecipeType`(`RecipeTypeID`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "RecipeID",
+            "columnName": "RecipeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeName",
+            "columnName": "RecipeName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "CookTime",
+            "columnName": "CookTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "PrepTime",
+            "columnName": "PrepTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "TotalTime",
+            "columnName": "TotalTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Servings",
+            "columnName": "Servings",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "AccountID",
+            "columnName": "AccountID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeTypeID",
+            "columnName": "RecipeTypeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RecipeID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Recipe_RecipeTypeID",
+            "unique": false,
+            "columnNames": [
+              "RecipeTypeID"
+            ],
+            "createSql": "CREATE  INDEX `index_Recipe_RecipeTypeID` ON `${TABLE_NAME}` (`RecipeTypeID`)"
+          },
+          {
+            "name": "index_Recipe_AccountID",
+            "unique": false,
+            "columnNames": [
+              "AccountID"
+            ],
+            "createSql": "CREATE  INDEX `index_Recipe_AccountID` ON `${TABLE_NAME}` (`AccountID`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Account",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "AccountID"
+            ],
+            "referencedColumns": [
+              "AccountID"
+            ]
+          },
+          {
+            "table": "RecipeType",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "RecipeTypeID"
+            ],
+            "referencedColumns": [
+              "RecipeTypeID"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "RecipeImage",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`RecipeImageID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `RecipeImagePath` TEXT, `RecipeID` INTEGER NOT NULL, FOREIGN KEY(`RecipeID`) REFERENCES `Recipe`(`RecipeID`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "RecipeImageID",
+            "columnName": "RecipeImageID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeImagePath",
+            "columnName": "RecipeImagePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "RecipeID",
+            "columnName": "RecipeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RecipeImageID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_RecipeImage_RecipeID",
+            "unique": false,
+            "columnNames": [
+              "RecipeID"
+            ],
+            "createSql": "CREATE  INDEX `index_RecipeImage_RecipeID` ON `${TABLE_NAME}` (`RecipeID`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Recipe",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "RecipeID"
+            ],
+            "referencedColumns": [
+              "RecipeID"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "RecipeInstructionStep",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`RecipeInstructionStepID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `RecipeInstructionText` TEXT, `RecipeInstructionOrderNumber` INTEGER NOT NULL, `RecipeID` INTEGER NOT NULL, FOREIGN KEY(`RecipeID`) REFERENCES `Recipe`(`RecipeID`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "RecipeInstructionStepID",
+            "columnName": "RecipeInstructionStepID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeInstructionText",
+            "columnName": "RecipeInstructionText",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "RecipeInstructionOrderNumber",
+            "columnName": "RecipeInstructionOrderNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeID",
+            "columnName": "RecipeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RecipeInstructionStepID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_RecipeInstructionStep_RecipeID",
+            "unique": false,
+            "columnNames": [
+              "RecipeID"
+            ],
+            "createSql": "CREATE  INDEX `index_RecipeInstructionStep_RecipeID` ON `${TABLE_NAME}` (`RecipeID`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Recipe",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "RecipeID"
+            ],
+            "referencedColumns": [
+              "RecipeID"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "RecipeType",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`RecipeTypeID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `RecipeTypeText` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "RecipeTypeID",
+            "columnName": "RecipeTypeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecipeTypeText",
+            "columnName": "RecipeTypeText",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "RecipeTypeID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"6795514ff2cee7ced7a19c372cefe11b\")"
+    ]
+  }
+}

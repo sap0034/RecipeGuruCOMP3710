@@ -1,0 +1,10 @@
+@startuml
+User -> UserHomePage: Clicks button to add new Step
+UserHomePage --> User: Prompts for adding Step
+
+User -> UserHomePage: Enters Step contents
+User -> UserHomePage: Clicks button to save Step
+UserHomePage -> System: Saves Step to Recipe
+System --> UserHomePage: Confirms addition of Step
+
+@enduml

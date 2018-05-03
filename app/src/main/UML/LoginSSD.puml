@@ -1,0 +1,11 @@
+@startuml
+       User -> System: 1: Request Login()
+
+       System --> User: 2: Return Login Form
+       group Login Form
+       User -> System: 3: Fills Out Username/Password
+       User -> System: 4: SubmitForm()
+       end
+       System -> System: 5: Logs user in
+       System --> User: 6: Returns user Home Page
+@enduml

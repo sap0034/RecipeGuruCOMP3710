@@ -1,0 +1,8 @@
+@startuml
+       User -> System: 1: Clicks Checkbox to add a recipe to favorites
+       System -> System: 2: FindRecipe(ID)
+       System -> System: 3: AddToFavorites(recipe)
+
+       System --> User: 6: Return Confirmation of Added Recipe
+
+       @enduml

@@ -1,0 +1,10 @@
+@startuml
+User -> User: Selects Photo to delete
+User -> System: Request to delete photo
+System -> System: Finds photo in system
+System -> System: Deletes Photo
+System --> User: Returns modal for User to confirm they with to delete
+System -> System: Deletes Photo
+System --> User: Return confirmation
+
+@enduml

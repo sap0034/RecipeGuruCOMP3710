@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorNavy</item>
+        <item name="colorPrimaryDark">@color/colorNavy</item>
+        <item name="colorAccent">@color/colorNavy</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="Regular" parent="android:TextAppearance">
+    </style>
+
+    <style name="SemiBold" parent="android:TextAppearance">
+    </style>
+
+    <style name="MenuItem">
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/h3</item>
+    </style>
+
+    <style name="Text14Reg">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/Regular</item>
+    </style>
+
+    <style name="Text22Semi">
+        <item name="android:textSize">@dimen/h1</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAppearance">@style/SemiBold</item>
+    </style>
+
+    <style name="Text22SemiWhite">
+        <item name="android:textSize">@dimen/h1</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

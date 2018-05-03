@@ -1,0 +1,10 @@
+@startuml
+User -> UserHomePage: Clicks button to add new Ingredient
+UserHomePage --> User: Prompts for adding Ingredient
+
+User -> UserHomePage: Enters Ingredient data
+User -> UserHomePage: Clicks button to save Ingredient
+UserHomePage -> System: Saves Ingredient to Recipe
+System --> UserHomePage: Confirms addition of Ingredient
+
+@enduml

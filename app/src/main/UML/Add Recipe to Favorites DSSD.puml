@@ -1,0 +1,12 @@
+@startuml
+                     User -> UserHomePage: 1: Views Recipe List
+                     User -> UserHomePage: 2: Clicks Checkbox to add a recipe to favorites
+                     UserHomePage -> System: 3: Request Add Recipe to Favorites
+
+                     System -> System: 4: Finds recipe by ID
+                     System -> System: 5: Adds Recipe to Favorite List
+
+                     System --> FavoriteList: 6: Return Recipe Favorites List
+                     User -> FavoriteList: 7: Views Recipe Favorites List
+
+                     @enduml

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Recipe Guru</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="group_members">Stephanie Parrish | Mason Monday</string>
+    <string name="group_name">Auburn University</string>
+    <string name="semester_class">COMP3710 Spring 2018</string>
+    <string name="new_recipe">NEW RECIPE</string>
+    <string name="recipes">RECIPES</string>
+    <string name="favorites">FAVORITES</string>
+    <string name="settings">SETTINGS</string>
+
+    /login_page.xml
+    <string name="forgot_password_button">Forgot Password?</string>
+    <string name="create_account_button">Create Account</string>
+
+    /main_menu.xml
+    <string name="title_activity_splash">Splash</string>
+    <string name="main_activity_btn_click_here">Click Here!!</string>
+</resources>

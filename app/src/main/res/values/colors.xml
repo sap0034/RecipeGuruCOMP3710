@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--app theme colors -->
+        <color name="colorNavy">#0a196e</color>
+        <color name="colorNavyTrans">#7d041059</color>
+        <color name="colorOrange">#FFE6690F</color>
+    <color name="colorWhite">#fdfdfd</color>
+        <color name="colorTextGrey">#8E939E</color>
+        <color name="colorWhiteTrans">#E6FFFFFF</color>
+</resources>
