@@ -4,7 +4,7 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.MainActivity"
+    tools:context="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Splash"
     android:background="@color/colorWhite">
 
     <View
