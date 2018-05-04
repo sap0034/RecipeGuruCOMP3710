@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 public class RecipeActivity extends MainActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,4 +20,7 @@ public class RecipeActivity extends MainActivity {
 
         setupToolbar(R.id.toolbar, "Recipe Guru", R.color.colorWhiteTrans, R.color.colorNavy, R.drawable.ic_burger);
     }
+
+
+
 }

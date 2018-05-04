@@ -24,6 +24,9 @@ public interface RecipeDao {
     @Query("SELECT COUNT(*) from Recipe where AccountID LIKE :AccountID")
     int countRecipes(int AccountID);
 
+    @Query("SELECT * FROM Recipe where AccountID = :AccountID AND RecipeTypeID = :RecipeTypeID")
+    List<Recipe> typeRecipeList(int AccountID, int RecipeTypeID);
+
     @Insert(onConflict = REPLACE)
     void addRecipe(Recipe recipe);
 
