@@ -1,0 +1,32 @@
+@startuml
+
+title Relationships - Domain Class Diagram
+
+class Recipe {
+  +name
+  +servings
+  +prepTime
+  +cookTime
+}
+class Account{
+  +username
+  +password
+}
+class Photo
+class Ingredient{
+  +item
+  +measurement
+  +amount
+}
+class Instructions
+class Step{
+  +contents
+}
+
+Recipe "1" *-down- "*" Ingredient
+Recipe "1" *-down- "1" Instructions
+Recipe "0..*" -left- "1" Account
+Recipe "1" o-right- "1" Photo
+Instructions "1" *-down- "*" Step
+
+@enduml

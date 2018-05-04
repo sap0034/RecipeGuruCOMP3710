@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:padding="@dimen/space16"
+    android:background="?android:attr/selectableItemBackground">
+    <ImageView
+        android:id="@+id/iv_recipe"
+        android:layout_width="@dimen/recipeImg"
+        android:layout_height="@dimen/recipeImg"/>
+    <TextView
+        android:id="@+id/tv_recipe_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space8"
+        android:text="@string/recipes"
+        android:textSize="@dimen/h3"
+        android:textColor="@color/colorNavy"
+        android:gravity="center_horizontal"
+        style="@style/SemiBold"/>
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_time"
+        android:drawablePadding="@dimen/space8"
+        android:text="1 hour"
+        android:textSize="@dimen/h3"
+        android:textColor="@color/colorTextGrey"
+        android:textAppearance="@style/Regular"/>
+</LinearLayout>

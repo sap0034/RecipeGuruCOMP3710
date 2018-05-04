@@ -1,0 +1,10 @@
+@startuml
+User -> System: Request to add step to recipe
+System --> User: return Prompt to add step
+
+User -> User: Enters Step contents
+User -> System: Submit()
+System -> System: Saves Step to Recipe
+System --> User: Confirms addition of Step
+
+@enduml

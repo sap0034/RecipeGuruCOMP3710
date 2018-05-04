@@ -1,0 +1,10 @@
+@startuml
+       User -> System: 1: Request DeleteAccount()
+       System -> System: 2:findAccount()
+       System --> User: 3: Return Confirmation to DeleteAccount()
+
+       User -> System: 4: Confirm Account Delete
+       System -> System: 5: Deletes User Account
+
+
+       @enduml

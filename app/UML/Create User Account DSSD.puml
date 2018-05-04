@@ -1,0 +1,17 @@
+@startuml
+User -> AppHomePage: 1: Request New Account
+AppHomePage -> System: 2: Request User Account
+
+System --> AppHomePage: 3: Return New Account Form
+group New Account Form
+User -> AppHomePage: 4: Fills Out Form
+User -> AppHomePage: 5: Click Button to SubmitForm()
+end
+AppHomePage -> System: 6: SubmitForm()
+
+System -> System: 7: CreateNewAccount()
+System --> AppHomePage: 8: Return New Account Confirmation
+AppHomePage --> UserHomePage: 9: Return User Home Page
+User -> UserHomePage: 10:  Views User Home Page
+
+@enduml

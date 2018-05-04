@@ -1,0 +1,9 @@
+@startuml
+User -> System: Request to remove Ingredient
+System --> User: Prompt to remove ingredient
+User -> User: Selects ingredient to remove
+User -> System: Submit()
+System -> System: Removes Ingredient
+
+System --> User: Returns delete confirmation
+@enduml

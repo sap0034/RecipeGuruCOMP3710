@@ -1,0 +1,10 @@
+@startuml
+       User -> System: 1: Request to DeleteRecipe()
+       System -> System: 2: FindRecipe()
+       System --> User: 3: Return confirmation to delete recipe
+
+       User -> System: 4: Confirms to Delete Recipe
+       System -> System: 5: DeleteRecipe()
+       System --> User: 6: Return Delete Notification
+
+       @enduml

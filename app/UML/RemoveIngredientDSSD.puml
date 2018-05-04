@@ -1,0 +1,16 @@
+@startuml
+User -> UserHomePage: Clicks button to remove Ingredient
+UserHomePage -> System: Request to remove Ingredient
+System --> UserHomePage: Request Ingredient number
+User -> UserHomePage: Enters Ingredient number
+UserHomePage -> System: Requests Ingredient details
+System --> UserHomePage: Sends removal confirmation
+
+User -> UserHomePage: Confirm removal
+UserHomePage -> System: Submits Ingredient removal
+
+System -> System: Deletes Ingredient
+System --> UserHomePage: Returns Ingredient removal confirmation
+User -> UserHomePage: Views confirmation
+
+@enduml

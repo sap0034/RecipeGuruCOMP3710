@@ -1,0 +1,14 @@
+@startuml
+       User -> UserHomePage: 1: Selects a recipe and request to delete
+       UserHomePage -> System: 2: Request to Delete Recipe
+       System -> System: 3: FindRecipe(ID)
+       System --> UserHomePage: 4: Return modal for User to confirm they with to delete
+
+       User -> UserHomePage: 5: Confirms to Delete Recipe
+       UserHomePage -> System: 6: Submits Recipe Delete Confirmation
+
+       System -> System: 7: DeleteRecipe()
+       System --> UserHomePage: 8: Returns Recipe Delete Confirmation
+       User -> UserHomePage: 9: Views Confirmation
+
+       @enduml
