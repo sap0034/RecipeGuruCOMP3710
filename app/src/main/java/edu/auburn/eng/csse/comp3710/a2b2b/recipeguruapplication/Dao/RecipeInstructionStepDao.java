@@ -9,6 +9,8 @@ import java.util.List;
 
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.RecipeInstructionStep;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface RecipeInstructionStepDao {
     @Query("SELECT * FROM RecipeInstructionStep Where RecipeID = :RecipeID")
@@ -22,6 +24,9 @@ public interface RecipeInstructionStepDao {
 
     @Insert
     void insertAll(RecipeInstructionStep... recipeInstructionSteps);
+
+    @Insert(onConflict = REPLACE)
+    void addInstruction(RecipeInstructionStep recipeInstructionStep);
 
     @Delete
     void delete(RecipeInstructionStep recipeInstructionStep);

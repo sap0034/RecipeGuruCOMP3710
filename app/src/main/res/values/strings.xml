@@ -48,4 +48,8 @@
     <string name="pint">pint</string>
     <string name="pieces">piece(s)</string>
     <string name="gallon">gallon</string>
+    <string name="add_instruction_step">ADD INSTRUCTION STEP</string>
+    <string name="step_number">Step Number</string>
+    <string name="instruction_text">Instruction Text</string>
+    <string name="save">SAVE</string>
 </resources>

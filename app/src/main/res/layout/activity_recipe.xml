@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recipe">
+    tools:context=".RecipeActivity">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,23 +57,24 @@
     <include layout="@layout/content_recipe" />
 
     <LinearLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_margin="@dimen/space16"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+        android:layout_margin="@dimen/space16"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:textAlignment="center"
-        android:textSize="@dimen/h1"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="@string/create_new_recipe"
-        android:textColor="@color/colorNavy" />
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:text="@string/create_new_recipe"
+                android:textAlignment="center"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -183,13 +184,29 @@
             <android.support.v7.widget.AppCompatSpinner
                 android:id="@+id/recipetype_spinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/space16">
+                <Button
+                    android:id="@+id/saveRecipebutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space16"
+                    android:background="@color/colorNavy"
+                    android:text="@string/SAVE"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/space8">
+            android:layout_marginTop="@dimen/space8"
+            android:orientation="horizontal">
+
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/floatingActionButton"
                 android:layout_width="111dp"
@@ -197,7 +214,8 @@
                 android:background="@color/colorWhite"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/ic_plus_sign"/>
+                app:srcCompat="@drawable/ic_plus_sign" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -206,11 +224,13 @@
                 android:textColor="@color/colorNavy"
                 android:textSize="@dimen/h1" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/space8">
+            android:layout_marginTop="@dimen/space8"
+            android:orientation="horizontal">
+
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/floatingActionButton2"
                 android:layout_width="111dp"
@@ -218,7 +238,8 @@
                 android:background="@color/colorWhite"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/ic_plus_sign"/>
+                app:srcCompat="@drawable/ic_plus_sign" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -227,14 +248,6 @@
                 android:textColor="@color/colorNavy"
                 android:textSize="@dimen/h1" />
         </LinearLayout>
-        <Button
-            android:id="@+id/saveRecipebutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/SAVE"
-            android:background="@color/colorNavy"
-            android:textColor="@color/colorWhite"
-            android:layout_marginTop="@dimen/space16"/>
 
     </LinearLayout>
 

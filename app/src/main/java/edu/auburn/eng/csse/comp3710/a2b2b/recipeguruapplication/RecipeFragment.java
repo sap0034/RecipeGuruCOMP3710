@@ -18,7 +18,9 @@ import java.util.List;
 
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Database.AppDatabase;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
+import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Ingredient;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Recipe;
+import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.RecipeInstructionStep;
 
 
 public class RecipeFragment extends Fragment {
@@ -32,11 +34,13 @@ public class RecipeFragment extends Fragment {
     private EditText myRecipeType;
     private Button mySaveButton;
 
+
     private String newRecipeName;
     private String newPrepTime;
     private String newCookTime;
     private String newTotalTime;
     private int Servings;
+
 
     private Spinner recipetypespinner;
     AppDatabase db;
@@ -173,6 +177,8 @@ public class RecipeFragment extends Fragment {
                         myNewRecipe.setCookTime(newCookTime);
                         myNewRecipe.setServings(Servings);
                         db.recipeDao().addRecipe(myNewRecipe);
+                         List<Ingredient> ingList = getIngredientList(myNewRecipe.getRecipeID());
+                         List<RecipeInstructionStep> steps = getRecipeInstructionSteps(myNewRecipe.getRecipeID());
                     }
                     else {
                         Toast.makeText(getContext(), "Add all fields to create a recipe.", Toast.LENGTH_SHORT).show();
@@ -184,8 +190,15 @@ public class RecipeFragment extends Fragment {
         }
 
 
+private List<RecipeInstructionStep> getRecipeInstructionSteps(int RecipeID) {
+        List<RecipeInstructionStep> instructionSteps = db.recipeInstructionStepDao().getAll(RecipeID);
+        return instructionSteps;
+}
 
-
+private List<Ingredient> getIngredientList (int RecipeID) {
+        List<Ingredient> ingredientList = db.ingredientDao().getAll(RecipeID);
+        return ingredientList;
+}
 
 
         public Recipe getRecipeDetails(String newRecipeName) {
@@ -198,4 +211,12 @@ public class RecipeFragment extends Fragment {
         }
             return null;
         }
+
+
+        public void deleteRecipe(Recipe myNewRecipe) {
+        db.recipeDao().delete(myNewRecipe);
+        }
+
+
+
 }
