@@ -17,6 +17,9 @@ public interface AccountDao {
     @Query("SELECT * FROM Account where FirstName LIKE  :FirstName AND LastName LIKE :LastName")
     Account findByName(String FirstName, String LastName);
 
+    @Query("SELECT * FROM Account where EmailAddress LIKE :EmailAddress")
+    Account findByEmailAddress(String EmailAddress);
+
     @Query("SELECT COUNT(*) from Account")
     int countAccounts();
 
