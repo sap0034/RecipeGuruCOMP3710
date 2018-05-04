@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
+
 public class LoginFragment extends Fragment {
 
     private Account myTestAccount;
