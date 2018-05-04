@@ -5,18 +5,33 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Button;
 import android.widget.TextView;
 
+import butterknife.BindView;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Database.AppDatabase;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
+    @BindView(R.id.saveAccountButton)
+    Button accountButton;
     private static final String TAG = MainActivity.class.getName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account_fragment);
+//        accountButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               //setContentView(R.layout.activity_detail);
+//            }
+//        });
+
     }
+
+
+
+
 
     public void setupToolbar(int toolbarId, String title, @ColorRes int titleColor, @ColorRes int colorBg, @DrawableRes int burger){
         toolbar = (Toolbar) findViewById(toolbarId);

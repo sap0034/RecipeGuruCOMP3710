@@ -1,62 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AccountActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CREATE ACCOUNT"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_gravity="center_horizontal"/>
-
-    <EditText
-        android:id="@+id/firstNameCreate"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:inputType="text"
-        android:text="First Name"/>
+        android:orientation="vertical"
+        app:layout_anchor="@+id/linearLayout"
+        app:layout_anchorGravity="top|center"
+        android:layout_margin="@dimen/space16">
 
-    <EditText
-        android:id="@+id/lastNameCreate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:inputType="text"
-        android:text="Last Name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="CREATE ACCOUNT"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/h1"
+            android:text="@string/first_name"/>
 
-    <EditText
-        android:id="@+id/emailCreate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:inputType="textEmailAddress"
-        android:text="Email"/>
+        <EditText
+            android:id="@+id/firstNameCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/h1"
+            android:text="@string/last_name"
+            />
 
-    <EditText
-        android:id="@+id/passwordCreate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:inputType="textPassword"
-        android:text="Password"/>
+        <EditText
+            android:id="@+id/lastNameCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/h1"
+            android:text="@string/email"/>
 
-    <EditText
-        android:id="@+id/passwordCreateConfirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:inputType="textPassword"
-        android:text="Confirm Password"/>
+        <EditText
+            android:id="@+id/emailCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textEmailAddress" />
 
-    <Button
-        android:id="@+id/saveAccountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Save"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/h1"
+            android:text="@string/password"/>
+
+        <EditText
+            android:id="@+id/passwordCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textPassword" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/h1"
+            android:text="Confirm Password"/>
+
+        <EditText
+            android:id="@+id/passwordCreateConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/saveAccountButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorNavy"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/SAVE" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

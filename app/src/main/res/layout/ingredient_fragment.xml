@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD INGREDIENT"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:layout_gravity="center_horizontal"
+        android:text="@string/add_ingredient"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorNavy" />
 
-    <EditText
-        android:id="@+id/ingredient_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ingredient Name"/>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/ingredient_name"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/space16" />
 
         <EditText
+            android:id="@+id/ingredient_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+        <TextView
             android:id="@+id/ingredient_amount"
             android:layout_width="193dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Amount" />
+            android:text="@string/amount"
+            android:textSize="@dimen/space16"
+            android:textColor="@color/colorNavy"/>
 
         <Spinner
             android:id="@+id/ingredient_measurements"
@@ -38,13 +49,15 @@
 
         </Spinner>
 
-    </LinearLayout>
+
 
     <Button
         android:id="@+id/ingredient_save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SAVE"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorNavy"
+        android:text="@string/SAVE"
+        android:textColor="@color/colorWhite" />
 
 </LinearLayout>

@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_anchorGravity="top|center">
     <ImageButton
         android:id="@+id/settingsMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        app:srcCompat="@android:drawable/ic_menu_preferences" />
+        app:srcCompat="@drawable/ic_food_icon" />
 
     <Button
         android:id="@+id/appetizerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:background="@color/colorNavy"
+        android:textColor="@color/colorWhite"
+        android:layout_margin="@dimen/space16"
         android:text="@string/appetizer_button" />
 
     <Button
         android:id="@+id/breakfastButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space16"
         android:layout_gravity="center_horizontal"
+        android:background="@color/colorNavy"
+        android:textColor="@color/colorWhite"
         android:text="@string/breakfast_button" />
 
     <Button
         android:id="@+id/lunchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorNavy"
+        android:layout_margin="@dimen/space16"
+        android:textColor="@color/colorWhite"
         android:layout_gravity="center_horizontal"
         android:text="@string/lunch_button"/>
 
@@ -37,13 +51,20 @@
         android:id="@+id/dinnerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space16"
+        android:background="@color/colorNavy"
+        android:textColor="@color/colorWhite"
         android:layout_gravity="center_horizontal"
         android:text="@string/dinner_button"/>
 
     <Button
         android:id="@+id/dessertsButton"
         android:layout_width="wrap_content"
+        android:layout_margin="@dimen/space16"
         android:layout_height="wrap_content"
+        android:background="@color/colorNavy"
+        android:textColor="@color/colorWhite"
         android:layout_gravity="center_horizontal"
         android:text="@string/desserts_button"/>
 </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

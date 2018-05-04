@@ -1,6 +1,5 @@
 package edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication;
 
-import android.arch.persistence.room.Database;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 import java.util.Date;
 import java.util.List;
 
+import butterknife.BindView;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Database.AppDatabase;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
 
@@ -33,6 +33,8 @@ public class CreateAccountFragment extends Fragment {
     private String myPassword;
     private String myPasswordConfirmation;
     private AppDatabase db;
+    @BindView(R.id.saveAccountButton)
+    Button saveAccount;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
