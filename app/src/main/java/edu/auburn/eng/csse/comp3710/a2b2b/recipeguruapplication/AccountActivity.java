@@ -5,8 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-import edu.auburn.eng.csse.comp3710.a2b2b.recipeguru.LoginFragment;
-
 public class AccountActivity extends AppCompatActivity{
 
     @Override
