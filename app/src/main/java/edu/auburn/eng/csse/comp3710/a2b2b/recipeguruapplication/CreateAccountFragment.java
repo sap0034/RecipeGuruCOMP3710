@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Date;
+
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
 
 public class CreateAccountFragment extends Fragment {
@@ -21,10 +23,17 @@ public class CreateAccountFragment extends Fragment {
     private EditText myPasswordConfirm;
     private Button mySaveButton;
 
+    private String myFirstName;
+    private String myLastName;
+    private String myEmail;
+    private String myPassword;
+    private String myPasswordConfirmation;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         myNewAccount = new Account();
+        allFilledIn();
     }
 
     @Override
@@ -40,7 +49,8 @@ public class CreateAccountFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                myNewAccount.setFirstName(s.toString());
+                myFirstName = s.toString();
+                allFilledIn();
             }
 
             @Override
@@ -58,7 +68,8 @@ public class CreateAccountFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                myNewAccount.setLastName(s.toString());
+                myLastName = s.toString();
+                allFilledIn();
             }
 
             @Override
@@ -76,7 +87,8 @@ public class CreateAccountFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                myNewAccount.setEmailAddress(s.toString());
+                myEmail = s.toString();
+                allFilledIn();
             }
 
             @Override
@@ -94,7 +106,8 @@ public class CreateAccountFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                myNewAccount.setPassword(s.toString());
+                myPassword = s.toString();
+                allFilledIn();
             }
 
             @Override
@@ -112,7 +125,8 @@ public class CreateAccountFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-
+                myPasswordConfirmation = s.toString();
+                allFilledIn();
             }
 
 
@@ -123,9 +137,47 @@ public class CreateAccountFragment extends Fragment {
         });
 
         mySaveButton = (Button) v.findViewById(R.id.saveAccountButton);
-        mySaveButton.setEnabled(false);
+        mySaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (myPasswordConfirmation.equals(myPassword)) {
+                    myNewAccount.setFirstName(myFirstName);
+                    myNewAccount.setLastName(myLastName);
+                    myNewAccount.setEmailAddress(myEmail);
+                    myNewAccount.setPassword(myPassword);
+                    myNewAccount.setAccountCreatedDatetime(new Date().toString());
+                }
+            }
+        });
 
         return v;
+    }
+
+    private void allFilledIn() {
+        int i = 0;
+
+        if (myFirstName == null) {
+            i++;
+        }
+        if (myLastName == null) {
+            i++;
+        }
+        if (myEmail == null) {
+            i++;
+        }
+        if (myPassword == null) {
+            i++;
+        }
+        if (myPasswordConfirmation == null) {
+            i++;
+        }
+
+        if (i > 0) {
+            mySaveButton.setEnabled(false);
+        }
+        else {
+            mySaveButton.setEnabled(true);
+        }
     }
 
 }
