@@ -1,7 +1,7 @@
 package edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,9 @@ import java.util.List;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Database.AppDatabase;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Recipe;
-import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.RecipeType;
 
 
-public class RecipeCreateFragment extends Fragment {
+public class RecipeFragment extends Fragment {
     private Account myAccount;
     private Recipe myNewRecipe;
     private EditText myRecipeName;
@@ -31,6 +31,13 @@ public class RecipeCreateFragment extends Fragment {
     private EditText myServings;
     private EditText myRecipeType;
     private Button mySaveButton;
+
+    private String newRecipeName;
+    private String newPrepTime;
+    private String newCookTime;
+    private String newTotalTime;
+    private int Servings;
+
     private Spinner recipetypespinner;
     AppDatabase db;
 
@@ -43,12 +50,13 @@ public class RecipeCreateFragment extends Fragment {
     //add items to spinner recipe types
     public void addRecipeTypeSpinner() {
         recipetypespinner = (Spinner) getView().findViewById(R.id.recipetype_spinner);
-        List<RecipeType> recipeTypeList = db.recipeTypeDao().getAll();
+        //List<RecipeType> recipeTypeList = db.recipeTypeDao().getAll();
         List<String> list = new ArrayList<String>();
-        for (RecipeType name:recipeTypeList) {
-            String recipetype = name.getRecipeTypeText();
-            list.add(recipetype);
-        }
+        list.add("Appetizer");
+        list.add("Breakfast");
+        list.add("Lunch");
+        list.add("Dinner");
+        list.add("Dessert");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, list);
         recipetypespinner.setAdapter(dataAdapter);
 
@@ -155,10 +163,22 @@ public class RecipeCreateFragment extends Fragment {
             });
 
             mySaveButton = (Button) v.findViewById(R.id.saveRecipebutton);
-            mySaveButton.setEnabled(false);
-
-            db.recipeDao().addRecipe(myNewRecipe);
-
+            mySaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (myNewRecipe != null) {
+                        myNewRecipe.setRecipeName(newRecipeName);
+                        myNewRecipe.setTotalTime(newTotalTime);
+                        myNewRecipe.setPrepTime(newPrepTime);
+                        myNewRecipe.setCookTime(newCookTime);
+                        myNewRecipe.setServings(Servings);
+                        db.recipeDao().addRecipe(myNewRecipe);
+                    }
+                    else {
+                        Toast.makeText(getContext(), "Add all fields to create a recipe.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
             return v;
         }
@@ -166,4 +186,16 @@ public class RecipeCreateFragment extends Fragment {
 
 
 
+
+
+        public Recipe getRecipeDetails(String newRecipeName) {
+        if (newRecipeName != null) {
+            myNewRecipe = db.recipeDao().findRecipeByName(newRecipeName);
+            return myNewRecipe;
+        }
+        else {
+            Toast.makeText(getContext(), "There is no recipe selected to view.", Toast.LENGTH_SHORT).show();
+        }
+            return null;
+        }
 }
