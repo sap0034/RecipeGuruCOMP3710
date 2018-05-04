@@ -9,6 +9,8 @@ import java.util.List;
 
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Measurement;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface MeasurementDao {
 
@@ -20,6 +22,9 @@ public interface MeasurementDao {
 
     @Query("SELECT COUNT(*) FROM Measurement")
     int countMeasurements();
+
+    @Insert(onConflict = REPLACE)
+    void addMeasurement(Measurement measurement);
 
     @Insert
     void insertAll(Measurement... measurements);

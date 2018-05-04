@@ -40,4 +40,12 @@
     <string name="add_step">Add Instruction Step</string>
     <string name="serving_text"># Servings:</string>
     <string name="SAVE">SAVE</string>
+
+    <string name="tbsp">tbsp</string>
+    <string name="tsp">tsp</string>
+    <string name="ounce">ounce</string>
+    <string name="cup">cup</string>
+    <string name="pint">pint</string>
+    <string name="pieces">piece(s)</string>
+    <string name="gallon">gallon</string>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="measurementNames">
+        <item>@string/tbsp</item>
+        <item>@string/tsp</item>
+        <item>@string/ounce</item>
+        <item>@string/cup</item>
+        <item>@string/pint</item>
+        <item>@string/pieces</item>
+        <item>@string/gallon</item>
+    </string-array>
+
+</resources>

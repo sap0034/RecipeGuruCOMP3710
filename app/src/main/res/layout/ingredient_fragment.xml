@@ -25,19 +25,26 @@
 
         <EditText
             android:id="@+id/ingredient_amount"
-            android:layout_width="184dp"
+            android:layout_width="193dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Amount" />
 
         <Spinner
             android:id="@+id/ingredient_measurements"
-            android:layout_width="202dp"
-            android:layout_height="match_parent"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
 
         </Spinner>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/ingredient_save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

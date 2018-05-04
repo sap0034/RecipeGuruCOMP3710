@@ -9,6 +9,8 @@ import java.util.List;
 
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Ingredient;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface IngredientDao {
     @Query("SELECT * FROM Ingredient WHERE RecipeID = :RecipeID")
@@ -19,6 +21,9 @@ public interface IngredientDao {
 
     @Query("SELECT COUNT(*) from Ingredient")
     int countIngredients();
+
+    @Insert(onConflict = REPLACE)
+    void addIngredient(Ingredient ingredient);
 
     @Insert
     void insertAll(Ingredient... ingredients);
