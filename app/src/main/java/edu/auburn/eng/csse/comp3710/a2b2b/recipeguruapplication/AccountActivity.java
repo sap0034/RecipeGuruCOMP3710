@@ -15,10 +15,9 @@ public class AccountActivity extends AppCompatActivity{
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-//        if (fragment == null) {
-//            fragment = new LoginFragment();
-//            fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
-//        }
+        if (fragment == null) {
+            fragment = new CreateAccountFragment();
+            fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
+        }
     }
-
 }

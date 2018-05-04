@@ -8,6 +8,8 @@ import java.util.List;
 
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface AccountDao {
 
@@ -22,6 +24,9 @@ public interface AccountDao {
 
     @Query("SELECT COUNT(*) from Account")
     int countAccounts();
+
+    @Insert (onConflict = REPLACE)
+    void addAccount(Account account);
 
     @Insert
     void insertAll(Account... accounts);
