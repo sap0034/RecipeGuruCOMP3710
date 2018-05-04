@@ -18,6 +18,7 @@
     /login_page.xml
     <string name="forgot_password_button">Forgot Password?</string>
     <string name="create_account_button">Create Account</string>
+    <string name="same_password_different">Passwords Do Not Match</string>
     /main_menu.xml
     <string name="title_activity_splash">Splash</string>
     <string name="main_activity_btn_click_here">Click Here!!</string>
