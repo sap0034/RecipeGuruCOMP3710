@@ -1,6 +1,10 @@
-<resources>
-    <string name="app_name">Recipe Guru</string>
+<?xml version="1.0"?>
 
+    <resources>
+
+    <string name="app_name">Recipe Guru</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Main</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="group_members">Stephanie Parrish | Mason Monday</string>
@@ -10,12 +14,16 @@
     <string name="recipes">RECIPES</string>
     <string name="favorites">FAVORITES</string>
     <string name="settings">SETTINGS</string>
-
+    <string name="share_recipe">Share your recipe with friends!</string>
     /login_page.xml
     <string name="forgot_password_button">Forgot Password?</string>
     <string name="create_account_button">Create Account</string>
-
     /main_menu.xml
+    <string name="appetizer_button">Appetizers</string>
+    <string name="breakfast_button">Breakfast</string>
+    <string name="lunch_button">Lunch</string>
+    <string name="dinner_button">Dinner</string>
+    <string name="desserts_button">Desserts</string>
     <string name="title_activity_splash">Splash</string>
     <string name="main_activity_btn_click_here">Click Here!!</string>
 </resources>

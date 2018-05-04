@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.widget.Button;
 import android.widget.EditText;
 
+import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Account;
+
 public class CreateAccountFragment extends Fragment {
     private Account myNewAccount;
     private EditText myFirstNameCreate;

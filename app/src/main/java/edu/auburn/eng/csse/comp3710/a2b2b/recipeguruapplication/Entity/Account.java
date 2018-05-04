@@ -37,20 +37,41 @@ public class Account {
     public void setFirstName(String FirstName) {
         this.FirstName = FirstName;
     }
-    public String getFirstName() {return this.FirstName; }
 
-    public void setLastName(String LastName) {this.LastName = LastName;}
-    public String getLastName() {return this.LastName;}
+    public String getFirstName() {
+        return this.FirstName;
+    }
 
-    public void setEmailAddress(String EmailAddress) {this.EmailAddress = EmailAddress;}
+    public void setLastName(String LastName) {
+        this.LastName = LastName;
+    }
+
+    public String getLastName() {
+        return this.LastName;
+    }
+
+    public void setEmailAddress(String EmailAddress) {
+        this.EmailAddress = EmailAddress;
+    }
+
     public String getEmailAddress() {
         return this.EmailAddress;
     }
 
-    public void setAccountCreatedDatetime(String AccountCreatedDatetime) {this.AccountCreatedDatetime = AccountCreatedDatetime;}
-    public String getAccountCreatedDatetime() {return this.AccountCreatedDatetime;}
+    public void setAccountCreatedDatetime(String AccountCreatedDatetime) {
+        this.AccountCreatedDatetime = AccountCreatedDatetime;
+    }
 
-    public void setPassword(String Password) {this.Password = Password;}
-    public String getPassword() {return this.Password;}
+    public String getAccountCreatedDatetime() {
+        return this.AccountCreatedDatetime;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    public String getPassword() {
+        return this.Password;
+    }
 
 }
