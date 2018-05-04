@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication">
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_applogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -21,8 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AccountActivity">
+        <activity android:name=".AccountActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,10 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RecipeActivity"
-            android:label="@string/title_activity_recipe"
-            android:theme="@style/AppTheme">
+        <activity android:name=".RecipeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

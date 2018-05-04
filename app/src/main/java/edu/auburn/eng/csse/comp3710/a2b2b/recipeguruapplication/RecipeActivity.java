@@ -1,26 +1,22 @@
 package edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
-public class RecipeActivity extends AppCompatActivity {
-
+public class RecipeActivity extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        if (fragment == null) {
+            fragment = new CreateAccountFragment();
+            fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
+        }
+
+        setupToolbar(R.id.toolbar, "Recipe Guru", R.color.colorWhiteTrans, R.color.colorNavy, R.drawable.ic_burger);
     }
-
 }
