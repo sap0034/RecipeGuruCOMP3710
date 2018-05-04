@@ -9,6 +9,8 @@ import java.util.List;
 
 import edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Recipe;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 
 @Dao
 public interface RecipeDao {
@@ -21,6 +23,9 @@ public interface RecipeDao {
 
     @Query("SELECT COUNT(*) from Recipe where AccountID LIKE :AccountID")
     int countRecipes(int AccountID);
+
+    @Insert(onConflict = REPLACE)
+    void addRecipe(Recipe recipe);
 
     @Insert
     void insertAll(Recipe... recipes);

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-    <resources>
+<resources>
 
     <string name="app_name">Recipe Guru</string>
     <string name="action_settings">Settings</string>
@@ -37,4 +37,6 @@
     <string name="choose_recipe_type">Choose Recipe Type</string>
     <string name="add_ingredient">Add Ingredient</string>
     <string name="add_step">Add Instruction Step</string>
+    <string name="serving_text"># Servings:</string>
+    <string name="SAVE">SAVE</string>
 </resources>
