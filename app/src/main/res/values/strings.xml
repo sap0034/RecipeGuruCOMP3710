@@ -28,8 +28,13 @@
     <string name="dinner_button">Dinner</string>
     <string name="desserts_button">Desserts</string>
 
-    <string name="enter_recipe_name">Enter Recipe Name:</string>
+    <string name="enter_recipe_name">Recipe Name:</string>
     <string name="prep_time">Prep Time:</string>
-    <string name="cook_time">Cook Time</string>
-    <string name="total_time">Total Time</string>
+    <string name="cook_time">Cook Time:</string>
+    <string name="total_time">Total Time:</string>
+    <string name="search">Search</string>
+    <string name="create_new_recipe">CREATE NEW RECIPE</string>
+    <string name="choose_recipe_type">Choose Recipe Type</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="add_step">Add Instruction Step</string>
 </resources>

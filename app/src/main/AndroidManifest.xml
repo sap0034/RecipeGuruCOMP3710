@@ -3,6 +3,7 @@
     package="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication">
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"

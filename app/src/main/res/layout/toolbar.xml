@@ -9,5 +9,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="@dimen/h1"
-        style="@style/Regular"/>
+        android:textColor="@color/colorWhite"
+        style="@style/Regular" />
 </android.support.v7.widget.Toolbar>

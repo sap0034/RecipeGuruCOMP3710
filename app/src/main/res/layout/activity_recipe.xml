@@ -1,82 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-<data>
-    <variable
-        name="recipe"
-        type="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Recipe"/>
-    <variable
-        name="ingredient"
-        type="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.Ingredient"/>
-    <variable
-        name="instruction"
-        type="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.RecipeInstructionStep"/>
-    <variable
-        name="recipeType"
-        type="edu.auburn.eng.csse.comp3710.a2b2b.recipeguruapplication.Entity.RecipeType"/>
-</data>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeActivity">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            app:collapsedTitleGravity="center_horizontal"
+            app:expandedTitleGravity="center_horizontal"
+            app:expandedTitleTextAppearance="@style/Text22Semi"
+            app:collapsedTitleTextAppearance="@style/Text22SemiWhite"
+            android:fitsSystemWindows="true"
+            android:contentInsetStart="0dp"
+            app:contentInsetStart="0dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="@drawable/overlay_white"/>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_collapseMode="pin"
+            android:layout_margin="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetStart="0dp"
+            android:padding="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+            <TextView
+                android:id="@+id/tv_title"
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/h3"
+                style="@style/Regular"/>
+        </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_recipe" />
+
     <LinearLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_margin="@dimen/space16"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textAlignment="center"
+        android:textSize="@dimen/h1"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_recipe"
+        android:textColor="@color/colorNavy" />
+</LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="76dp"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_recipe_name"/>
+                android:text="@string/enter_recipe_name"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+
             <EditText
                 android:id="@+id/et_recipename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={recipe.RecipeName}"/>
+                android:layout_width="275dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
-      <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/prep_time"/>
-          <EditText
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:id="@+id/recipe_preptime"
-              android:text="@={recipe.PrepTime}"/>
-      </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cook_time"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/recipe_cooktime"
-                android:text="@={recipe.CookTime}"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/total_time"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/recipe_totaltime"
-                android:text="@={recipe.TotalTime}"/>
-        </LinearLayout>
-      </LinearLayout>
 
-</layout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="73dp"
+                android:layout_height="wrap_content"
+                android:text="@string/prep_time"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+
+            <EditText
+                android:id="@+id/recipe_preptime"
+                android:layout_width="279dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cook_time"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+
+            <EditText
+                android:id="@+id/recipe_cooktime"
+                android:layout_width="273dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="79dp"
+                android:layout_height="wrap_content"
+                android:text="@string/total_time"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+
+            <EditText
+                android:id="@+id/recipe_totaltime"
+                android:layout_width="273dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_recipe_type"
+                android:textAlignment="center"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/recipetype_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/space8">
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="111dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                app:srcCompat="@drawable/ic_plus_sign"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_ingredient"
+                android:textAlignment="center"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/space8">
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="111dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                app:srcCompat="@drawable/ic_plus_sign"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_step"
+                android:textAlignment="center"
+                android:textColor="@color/colorNavy"
+                android:textSize="@dimen/h1" />
+        </LinearLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
+
 
 
 
