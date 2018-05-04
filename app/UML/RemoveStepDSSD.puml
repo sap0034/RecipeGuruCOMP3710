@@ -1,0 +1,16 @@
+@startuml
+User -> UserHomePage: Clicks button to remove Step
+UserHomePage -> System: Request to remove Step
+System --> UserHomePage: Request Step number
+User -> UserHomePage: Enters Step number
+UserHomePage -> System: Requests Step details
+System --> UserHomePage: Sends removal confirmation
+
+User -> UserHomePage: Confirm removal
+UserHomePage -> System: Submits Step removal
+
+System -> System: Deletes Step
+System --> UserHomePage: Returns Step removal confirmation
+User -> UserHomePage: Views confirmation
+
+@enduml

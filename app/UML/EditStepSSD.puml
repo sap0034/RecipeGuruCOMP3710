@@ -1,0 +1,12 @@
+@startuml
+User -> System: Request to edit Step
+System --> User: Return Prompt for edit step
+
+User -> User: Edits Step
+User -> System: Submits Step changes
+System -> System: Edits Step
+
+System --> User: Returns Step update confirmation
+
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+       User -> AppHomePage: 1: Request to Login
+       AppHomePage -> System: 2: Request User Login
+
+       System --> AppHomePage: 3: Return Login Form
+       group Login Form
+       User -> AppHomePage: 4: Fills Out Login Form
+       User -> AppHomePage: 5: Submits Form
+       end
+       AppHomePage -> System: 6: Submits Form
+
+       System -> System: 7: Logs user in
+       System --> UserHomePage: 8: Returns user Home Page
+       User -> UserHomePage: 9: Views User Home Page
+@enduml

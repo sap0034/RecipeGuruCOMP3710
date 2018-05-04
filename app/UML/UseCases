@@ -1,0 +1,128 @@
+1. Create User Account
+Actors: User, System
+PreConditions: User doesn't have an account
+Summary: User will go to the app and be prompted to login. User will click the "Create New Account"
+Button and will be prompted to enter their name, email address, and password. The email address will
+then be used as the username for the account. The user will submit the form. The form will be
+validated to make sure all fields have been completed and will send the data to a SQL lite DB to be
+saved and accessed later by the application.
+
+2. Login
+Actors: User, System
+PreConditions: User already has an account
+Summary: User will go to the app and be prompted to enter login information. The user will then
+enter their email address used to set up the account and their password and click the submit button.
+The system will then find the user and validate the users username and password and return the users
+homepage. If the use enters invalid data then the system will notify the user of wrong username/
+password.
+
+3. Delete Account
+Actors: User, System
+PreConditions: User will be logged into the system
+Summary: User will go to account summary page for his account. The user will click the delete account
+button. The system will find the users account and display a confirmation to delete the account.
+The user will then confirm to have the account deleted. The system will find the account in the
+database and will delete the account. The system will then redirect the user to the app homepage. If
+the system has any issues deleting the account then a notification will appear notifying the user.
+
+4. Add Recipe
+Actors: User, System
+PreConditions: User is logged in and is viewing the user homepage.
+Summary: User click button to add a new recipe. User will be prompted to add a recipe name, serving
+size, ingredietns, steps, prep-time, and cook time. The user will fill out the information and submit
+the form. There will be a recipe created by the system.
+
+5. Save recipe
+Actors: User, System
+PreConditions: User is logged in and has entered information to create a recipe
+Summary: User will click the "Save" button after completing the form for creating a new recipe. The
+system will then validate the data in the form to make sure nothing has been left out and will
+save the recipe to the database. The system will then return a notification letting the user know
+that the recipe has been saved.
+
+6. Edit Recipe
+Actors: User, System
+PreConditions: User is logged in and has previously added a recipe
+Summary: The user will click on a recipe and then request to edit the recipe. The system will find
+the recipe in the database by ID and will return a windown the information that was submitted for the
+recipe in it. The system will then allow the user to update the recipe. Once the user is finished
+then the user will click "save" and the information will be saved and updated in the database.
+
+7. Delete Recipe
+Actors: User, System
+Preconditions: User is logged in and has created and saved a recipe in the past
+Summary: The user will click on a recipe and then request to remove the recipe. The system will find
+the recipe in the database by ID and will return a windown the information that was submitted for the
+recipe in it. The system will then ask the user if they wish to delete the recipe. Once the user is
+finished confirms the delete then the user will click "delete" and the information will be deleted
+and updated in the database.
+
+8. Add recipe to favorites
+Actors: User, System
+PreConditions: User is logged in and has previously created a recipe
+Summary: User views recipe. User clicks checkbox to add recipe to favorites. System takes recipe and
+puts recipe into favorites list.
+
+9. Remove recipe from favorites
+Actors: User, System
+PreConditions: User is logged in and has previously added a recipe to favorites
+Summary: User goes to favorites list and finds recipe that needs to be removed. User unchecks
+favorites box. The recipe is removed from the favorites list by the system.
+
+10. Add Photo of recipe
+Actors: User, System
+PreConditions: User is logged in and has created a recipe
+Summary: User clicks button to add photo to recipe. User has the option of uploading a photo or just
+selecting a photo from the users phone gallery. User takes a photo and the system displays a photo
+confirmation screen. The user checks that the photo is correct and the system uploads the photo to
+the recipe.
+
+11. Delete a photo of recipe
+Actors: User, System
+PreConditions: User is logged in and has created a recipe and added a photo
+Summary: User find recipe that has a photo that the user would like deleted. The user edits the
+recipe. The user goes to the photo that was previously uploaded and clicks the remove photo button.
+The system then removes the photo from the recipe.
+
+12. Add Ingredient
+Actors: User, System
+Preconditions: User has created a new recipe and is logged in
+Summary: The user clicks the add ingredient button to add ingredients to the recipe. The system will
+display a search or add ingredient form where the user can select which ingredient to add, ingredient
+and measurement. The user then clicks the save ingredient button and the ingredient is saved to the
+recipe.
+
+13. Add Step
+Actors: User, System
+Preconditions: User is logged in and a recipe has been created.
+Summary:The user clicks the add step button to add a step to the recipe. The system will display a
+text box where the user can input instructions for the recipe one step at a time. The user then clicks
+the save step button and the step is saved to the recipe.
+
+14. Edit Step
+Actors: User, System
+Preconditions: User is logged in and a recipe has been created.
+Summary: The user clicks the edit step button to edit a step of the recipe. The system will display a
+text box where the user can edit instructions for the step. The user then clicks the save step button
+and the step is saved to the recipe.
+
+15. Remove Step
+Actors: User, System
+Preconditions: User is logged in and a recipe has been created.
+Summary: The user clicks the remove step button to remove a step from the recipe. The system will
+confirm that the user wants this step removed. The user will select yes to confirm and the system
+will delete the step from the recipe.
+
+16. Remove Ingredient
+Actors: User, System
+Preconditions: User is logged in and a recipe has been created.
+Summary: The user will click the remove ingredient button to remove an ingredient from the recipe.
+The system will confirm that the user wants this ingredient removed. The user will select yes to
+confirm removal of the ingredient and the system will delete the ingredient from the recipe.
+
+17. Share Recipe with Friends
+Actors: User, System
+Preconditions: User is logged in and a recipe has been created.
+Summary: Under each recipe is a share function. The user will select the button to share the recipe.
+The system will then ask the user if he wishes to share on facebook or twitter. The user will then
+select the option they want and the system will share the recipe to social media.

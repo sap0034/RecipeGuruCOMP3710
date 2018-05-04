@@ -1,0 +1,10 @@
+@startuml
+User -> System: Request to Add new ingredient
+System --> User: Prompts for adding Ingredient
+
+User -> User: Enters Ingredient data
+User -> System: Submits Ingredient
+System -> System: Adds ingredient
+System --> User: Confirms addition of Ingredient
+
+@enduml

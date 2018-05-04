@@ -1,0 +1,12 @@
+@startuml
+       User -> System: 1: RequestNewRecipe()
+       System --> User: 2: Return New Recipe Form
+ group New Recipe Form
+       User -> User: 3: Fills out Recipe Form
+       User -> User: 4: Adds ingredients
+       User -> User: 5: Adds Recipe Instruction Steps
+       User -> System: 6: SubmitForm()
+       end
+       System -> System: 7: AddRecipe()
+
+       @enduml

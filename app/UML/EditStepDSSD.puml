@@ -1,0 +1,17 @@
+@startuml
+User -> UserHomePage: Clicks button to edit Step
+UserHomePage -> System: Request to Edit Step
+System --> UserHomePage: Request Step number
+User -> UserHomePage: Enters Step number
+UserHomePage -> System: Requests Step details
+System --> UserHomePage: Return Step details to be edited
+
+User -> UserHomePage: Edits Step
+User -> UserHomePage: Submits Step changes
+UserHomePage -> System: Submits Step changes
+
+System -> System: Updates Step
+System --> UserHomePage: Returns Step update confirmation
+User -> UserHomePage: Views confirmation
+
+@enduml

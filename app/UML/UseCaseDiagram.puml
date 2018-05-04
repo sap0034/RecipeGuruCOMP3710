@@ -1,0 +1,32 @@
+@startuml
+
+:User:
+
+User --> (Create Recipe)
+User --> (Delete Recipe)
+User --> (Edit Recipe)
+User --> (Add Ingredient)
+User --> (Add Step)
+User --> (Remove Ingredient)
+User --> (Remove Step)
+
+(Create Recipe) ..> (Add Ingredient): <extends>
+(Create Recipe) ..> (Add Step): <extends>
+
+(Delete Recipe) ..> (Remove Ingredient): <extends>
+(Delete Recipe) ..> (Remove Step): <extends>
+
+(Edit Recipe) ..> (Add Ingredient): <extends>
+(Edit Recipe) ..> (Add Step): <extends>
+(Edit Recipe) ..> (Remove Ingredient): <extends>
+(Edit Recipe) ..> (Remove Step): <extends>
+
+newpage
+
+User --> (Save Recipe)
+User --> (Favorite Recipe)
+User --> (Unfavorite Recipe)
+User --> (Share Recipe)
+User --> (Create Account)
+
+@enduml

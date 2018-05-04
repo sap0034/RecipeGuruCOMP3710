@@ -1,0 +1,13 @@
+@startuml
+User -> UserHomePage: Selects Photo and request deletion
+UserHomePage -> System: Requests to Delete Photo
+System --> UserHomePage: Returns modal for User to confirm they with to delete
+
+User -> UserHomePage: Confirms to Delete Photo
+UserHomePage -> System: Submits Photo Delete Confirmation
+
+System -> System: Deletes Photo
+System --> UserHomePage: Returns Photo Delete Confirmation
+User -> UserHomePage: Views Confirmation
+
+@enduml

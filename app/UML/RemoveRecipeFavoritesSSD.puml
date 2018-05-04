@@ -1,0 +1,7 @@
+@startuml
+       User -> System: 1: Clicks Checkbox to remove a recipe from favorites
+       System -> System: 2: FindRecipe(ID)
+       System --> User: 3: Return remove recipe from favorites confirmation
+       System -> System: 4: RemoveRecipeFromFavorites()
+       System --> User: 5: Return Recipe Favorites List with Recipe Removed
+       @enduml
